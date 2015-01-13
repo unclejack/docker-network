@@ -7,7 +7,7 @@ build: dockerbuild
 	$(RUN_CMD) go build -v
 
 test: dockerbuild
-	$(RUN_CMD) go test -v ./...
+	$(RUN_CMD) go test -v ${PKG}/drivers/simplebridge ${PKG}/namespace
 
 dockerbuild:
 	docker build -t $(IMGNAME) .	
